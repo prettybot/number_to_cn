@@ -22,11 +22,11 @@ so simple to use:
 
 require 'number_to_cn'
 
-123.to_cn_words   #=> 壹佰贰拾叁
+123.to_cn_words   #=> 一百二十三
 
-123.to_cn_clearly #=> 壹贰叁
+123.to_cn_clearly #=> 一二三
 
-0.1.to_cn_words   #=> 零点壹
+0.1.to_cn_words   #=> 零点一
 
 0.to_cn_words     #=> 零
 
@@ -42,4 +42,3 @@ number_to_cn
 ============
 
 transfer number into chinese characters
->>>>>>> 6447d6a2f58a576d6d94a6ed5896b33cf1a43204

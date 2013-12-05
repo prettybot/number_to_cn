@@ -1,9 +1,9 @@
 #encoding:utf-8
-module NumberToCn 
-  CN_T_TRANS           = [ "", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖", "拾" ]
-  CN_T_TRANS_WITH_ZERO = [ "零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖", "拾" ]
-  CN_T_POSITION        = [ "", "拾", "佰", "仟" ]
-  CN_T_BIG             = [ "", "萬", "亿", "萬" ]
+module NumberToCn
+  CN_T_TRANS           = [ "", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十" ]
+  CN_T_TRANS_WITH_ZERO = [ "零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十" ]
+  CN_T_POSITION        = [ "", "十", "百", "千" ]
+  CN_T_BIG             = [ "", "万", "亿", "万" ]
 
   def to_cn_words
     if self.class == Fixnum
@@ -19,9 +19,9 @@ module NumberToCn
     num_arr = self.to_s.split('').reverse
     rst_arr = []
 
-    writable = -1 
+    writable = -1
     #1： 都需要写；
-    #0： 写一个零，后面的'千'不用写； 
+    #0： 写一个零，后面的'千'不用写；
     #-1：不需要写'千'，也不需要写'零'；
 
     num_arr.each_with_index do |value, index|
@@ -49,7 +49,7 @@ module NumberToCn
     after_point_zero = "零" * (after_point.length - after_point.to_i.to_s.length)
     "#{before_point.int_words}点#{after_point_zero}#{after_point.to_i.to_cn_clearly}"
   end
-  
+
   def to_cn_clearly
     to_s.split('')
         .delete_if{ |c| c =~ /\D/ }
