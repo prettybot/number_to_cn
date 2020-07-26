@@ -6,7 +6,7 @@ module NumberToCn
   CN_T_BIG             = [ "", "万", "亿", "万" ]
 
   def to_cn_words
-    if self.class == Fixnum
+    if self.class == Integer
       int_words
     elsif self.class == Float
       float_words
